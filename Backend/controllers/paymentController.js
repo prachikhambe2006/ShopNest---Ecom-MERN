@@ -18,7 +18,7 @@ const createOrder = async (req, res) => {
     if (!order) return res.status(500).send("Some error occured");
     res.json(order);
   } catch (error) {
-    res.status(500).send(error);
+    res.status(500).json({ message: "An error occurred while creating the order." });
   }
 };
 
@@ -36,7 +36,7 @@ const verifyPayment = async (req, res) => {
       return res.status(400).json({ message: "Invalid signature sent!" });
     }
   } catch (error) {
-    res.status(500).send(error);
+    res.status(500).json({ message: "An error occurred while verifying the payment." });
   }
 };
 

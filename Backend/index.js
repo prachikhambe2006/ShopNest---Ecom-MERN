@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 } else {
   app.get('/', (req, res) => {
-    res.send('ShopNest API is running in Development mode...');
+    res.json({ message: 'ShopNest API is running in Development mode...' });
   });
 }
 
