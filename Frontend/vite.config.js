@@ -6,7 +6,7 @@ export default defineConfig({
  server:{
    proxy:{
      '/api':{
-       target: env.VITE_API_URL || 'http://shopnest-c52n.onrender.com' || 'http://localhost:5000',
+       target: 'http://shopnest-c52n.onrender.com' || 'http://localhost:5000',
        changeOrigin:true
      }
    }

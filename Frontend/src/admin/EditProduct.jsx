@@ -22,7 +22,7 @@ const EditProduct = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`/api/products/${id}`);
+        const res = await fetch(`${API}/api/products/${id}`);
         const data = await res.json();
 
         if (res.ok) {
@@ -61,7 +61,7 @@ const EditProduct = () => {
     }
 
     try {
-      const res = await fetch(`/api/products/${id}`, {
+      const res = await fetch(`${API}/api/products/${id}`, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${user.token}`

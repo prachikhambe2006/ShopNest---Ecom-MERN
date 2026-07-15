@@ -8,8 +8,8 @@ const Home = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      try {
-        const res = await fetch('/api/products');
+      try { 
+        const res = await fetch(`${API}/api/products`);
         const data = await res.json();
 
         if (res.ok) {

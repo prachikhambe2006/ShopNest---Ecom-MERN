@@ -30,7 +30,7 @@ const Checkout = () => {
     try {
       setProcessing(true);
 
-      const orderRes = await fetch('/api/payment/order', {
+      const orderRes = await fetch(`${API}/api/payment/order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -66,7 +66,7 @@ const Checkout = () => {
 
         handler: async function (response) {
           try {
-            const verifyRes = await fetch('/api/payment/verify', {
+            const verifyRes = await fetch(`${API}/api/payment/verify`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
@@ -75,7 +75,7 @@ const Checkout = () => {
             });
 
             if (verifyRes.ok) {
-              const saveOrderRes = await fetch('/api/orders', {
+              const saveOrderRes = await fetch(`${API}/api/orders`, {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -136,7 +136,7 @@ const Checkout = () => {
 
   const bypassPayment = async () => {
     try {
-      const saveOrderRes = await fetch('/api/orders', {
+      const saveOrderRes = await fetch(`${API}/api/orders`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

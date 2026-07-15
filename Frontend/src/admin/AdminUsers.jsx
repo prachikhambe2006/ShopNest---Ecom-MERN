@@ -9,7 +9,7 @@ const AdminUsers = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch('/api/auth/users', {
+        const res = await fetch(`${API}/api/auth/users`, {
           headers: {
             Authorization: `Bearer ${user.token}`
           }

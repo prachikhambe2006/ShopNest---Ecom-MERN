@@ -17,7 +17,7 @@ const Profile = () => {
 
     const fetchMyOrders = async () => {
       try {
-        const res = await fetch('/api/orders/myorders', {
+        const res = await fetch(`${API}/api/orders/myorders`, {
           headers: { Authorization: `Bearer ${user.token}` }
         });
 

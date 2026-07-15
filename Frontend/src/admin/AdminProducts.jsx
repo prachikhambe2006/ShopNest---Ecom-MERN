@@ -10,7 +10,7 @@ const AdminProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch('/api/products');
+        const res = await fetch(`${API}/api/orders`);
         const data = await res.json();
 
         if (res.ok) {
