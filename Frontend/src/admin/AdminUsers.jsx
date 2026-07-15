@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { toast } from 'react-toastify';
-
+import { API } from "../config";
 const AdminUsers = () => {
   const { user } = useContext(AuthContext);
   const [users, setUsers] = useState([]);

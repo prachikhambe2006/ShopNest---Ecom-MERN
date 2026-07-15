@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import { clearCart } from '../redux/cartSlice';
 import { toast } from 'react-toastify';
-
+import { API } from "../config";
 const Checkout = () => {
   const { user } = useContext(AuthContext);
   const cartItems = useSelector((state) => state.cart.cartItems);

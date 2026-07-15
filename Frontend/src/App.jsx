@@ -15,11 +15,11 @@ import Profile from './pages/Profile';
 import OrderSuccess from './pages/OrderSuccess';
 import About from './pages/About';
 import Disclaimer from './pages/Disclaimer';
-import ReturnPolicy from './pages/ReturnPolicy';
+import ReturnPolicy from './pages/ReturnPolicy.jsx';
 
 // Admin
-import AdminDashboard from './admin/AdminDashboard';
-import AddProduct from './admin/AddProduct';
+import AdminDashboard from './admin/AdminDashboard.jsx';
+import AddProduct from './admin/AddProduct.jsx';
 import AdminProducts from './admin/AdminProducts.jsx';
 import EditProduct from './admin/EditProduct.jsx';
 import AdminOrders from './admin/AdminOrders.jsx';

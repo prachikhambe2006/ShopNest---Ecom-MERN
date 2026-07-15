@@ -15,7 +15,7 @@ const createOrder = async (req, res) => {
     };
     
     const order = await instance.orders.create(options);
-    if (!order) return res.status(500).send("Some error occured");
+    if (!order) return res.status(500).json({ message: "Some error occurred" });
     res.json(order);
   } catch (error) {
     res.status(500).json({ message: "An error occurred while creating the order." });

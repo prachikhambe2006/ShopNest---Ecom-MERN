@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
 import { toast } from "react-toastify";
-
+import { API } from "../config";
 const Profile = () => {
   const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();

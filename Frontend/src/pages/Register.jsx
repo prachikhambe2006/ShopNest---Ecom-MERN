@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import { toast } from "react-toastify";
 import '../styles/auth.css';
-
+import { API } from "../config";
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
