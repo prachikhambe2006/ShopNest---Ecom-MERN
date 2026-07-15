@@ -1,26 +1,28 @@
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 
 const sendEmail = async ({ email, subject, message }) => {
   try {
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: "gmail",
       auth: {
         user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS, 
+        pass: process.env.GMAIL_PASS,
       },
     });
 
-    const mailOptions = {
+    await transporter.verify();
+    console.log("SMTP Connected");
+
+    await transporter.sendMail({
       from: `"ShopNest Support" <${process.env.GMAIL_USER}>`,
       to: email,
-      subject: subject,
+      subject,
       html: message,
-    };
+    });
 
-    await transporter.sendMail(mailOptions);
-    console.log(`Email successfully sent to ${email}`);
+    console.log("Email sent successfully");
   } catch (error) {
-    console.error(`Failed to send email to ${email}: ${error.message}`);
+    console.error(error);
   }
 };
 
