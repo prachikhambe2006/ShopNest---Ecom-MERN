@@ -20,10 +20,10 @@ import ReturnPolicy from './pages/ReturnPolicy';
 // Admin
 import AdminDashboard from './admin/AdminDashboard';
 import AddProduct from './admin/AddProduct';
-import AdminProducts from './admin/AdminProducts';
-import EditProduct from './admin/EditProduct';
-import AdminOrders from './admin/AdminOrders';
-import AdminUsers from './admin/AdminUsers';
+import AdminProducts from './admin/AdminProducts.jsx';
+import EditProduct from './admin/EditProduct.jsx';
+import AdminOrders from './admin/AdminOrders.jsx';
+import AdminUsers from './admin/AdminUsers.jsx';
 
 // Toastify
 import { ToastContainer } from "react-toastify";
