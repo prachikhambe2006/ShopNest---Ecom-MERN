@@ -5,6 +5,7 @@ import { addToCart } from '../redux/cartSlice';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/product.css';
+import { API } from "../config";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const ProductDetail = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`/api/products/${id}`);
+        const res = await fetch(`${API}/api/products/${id}`);
         const data = await res.json();
         setProduct(data);
       } catch (error) {
