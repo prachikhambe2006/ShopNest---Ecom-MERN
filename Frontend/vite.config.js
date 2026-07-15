@@ -6,7 +6,7 @@ export default defineConfig({
  server:{
    proxy:{
      '/api':{
-       target: 'http://shopnest-c52n.onrender.com' || 'http://localhost:5000',
+       target: 'https://shopnest-c52n.onrender.com' || 'https://localhost:5000',
        changeOrigin:true
      }
    }
