@@ -64,11 +64,13 @@ const AdminDashboard = () => {
   };
 
   const numberStyle = {
-    fontSize: '2.5rem',
-    fontWeight: '700',
-    color: '#f97316'
-  };
-
+  fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
+  fontWeight: '700',
+  color: '#f97316',
+  wordBreak: 'break-word',
+  overflowWrap: 'break-word',
+  lineHeight: '1.2'
+};
   return (
     <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '5px' }}>
@@ -93,7 +95,13 @@ const AdminDashboard = () => {
           </div>
           <div style={cardStyle}>
             <h4 style={{ color: '#a1a1aa', fontSize: '1rem' }}>Total Revenue</h4>
-            <div style={numberStyle}>₹{stats.totalRevenue.toFixed(2)}</div>
+            <div style={numberStyle}>
+  ₹
+  {Number(stats.totalRevenue).toLocaleString("en-IN", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })}
+</div>
           </div>
         </div>
       ) : (

@@ -257,14 +257,14 @@ const Checkout = () => {
 
             <h4>Total to Pay: ₹{totalPrice.toFixed(2)}</h4>
 
-            <button
-              type="submit"
-              className="btn"
-              disabled={processing}
-            >
-              {processing ? 'Processing Payment...' : 'Pay Now'}
-            </button>
-
+            
+<button
+  type="submit"
+  className={`btn ${processing ? "loading" : ""}`}
+  disabled={processing}
+>
+  {processing ? "Processing..." : "Pay Now"}
+</button>
           </div>
         </form>
       </div>
