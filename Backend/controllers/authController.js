@@ -30,11 +30,13 @@ const registerUser = async (req, res) => {
         <p>Your one-time verification/discount OTP is: <strong>${otp}</strong></p>
       `;
 
-      await sendEmail({
+       sendEmail({
         email: user.email,
         subject: 'Welcome to ShopNest - Your OTP',
         message
-      });
+      })
+      .then(() => console.log("Welcome email sent"))
+      .catch((err) => console.log("Email Error:", err.message));
 
       res.status(201).json({
         _id: user._id,

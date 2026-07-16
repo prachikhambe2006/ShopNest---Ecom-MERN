@@ -33,7 +33,7 @@ const AdminOrders = () => {
 
   const updateStatus = async (id, status) => {
     try {
-      const res = await fetch(`/api/orders/${id}/status`, {
+      const res = await fetch(`${API}/api/orders/${id}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -43,6 +43,9 @@ const AdminOrders = () => {
       });
 
       const data = await res.json();
+
+
+      console.log(data);
 
       if (res.ok) {
         setOrders(
